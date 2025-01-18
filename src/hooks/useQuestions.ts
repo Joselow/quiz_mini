@@ -3,7 +3,7 @@ import { useQuestionStore } from "../stores/storeQuestion"
 import { Question } from "../types"
 
 export function useQuestions () {
-    const { questions, setQuestions } = useQuestionStore()
+    const { questions, setQuestions, indexQuestion, selectAnswer } = useQuestionStore()
 
     const getQuestions = async(limit = 5) => {
       const questions: Question[] = await fetchQuestions()
@@ -13,6 +13,8 @@ export function useQuestions () {
 
     return {
         questions,
-        getQuestions
+        indexQuestion,
+        getQuestions,
+        selectAnswer
     }
 }

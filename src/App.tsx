@@ -1,16 +1,16 @@
 import './App.css'
+import { Game } from './components/Game';
 import { StartButton } from './components/StartButton';
 import { useQuestions } from './hooks/useQuestions';
 
 function App() {
   const { questions } = useQuestions()
-  console.log(questions);
-
   return (
     <>
      <main>
         <h1>Quiz</h1>
-        <StartButton/>
+        { questions.length > 0 && <Game/> }
+        { questions.length <= 0 && <StartButton/> }
      </main>
     </>
   )

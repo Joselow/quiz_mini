@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.restart {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

@@ -4,11 +4,27 @@ import { StartButton } from './components/StartButton';
 import { useQuestions } from './hooks/useQuestions';
 
 function App() {
-  const { questions } = useQuestions()
+  const { questions, resetGame, inGame, userSelectedAnswer } = useQuestions()
+
+  const handleRestart = () => {
+    resetGame()
+  }
+
   return (
     <>
      <main>
-        <h1>Quiz</h1>
+        <div style={{ position: 'relative' }}>
+          <h1>Quiz</h1>
+
+          { 
+            inGame && userSelectedAnswer  && 
+            <button className='restart'
+              onClick={handleRestart}
+              >Again
+            </button>
+          }       
+        </div>
+
         { questions.length > 0 && <Game/> }
         { questions.length <= 0 && <StartButton/> }
      </main>

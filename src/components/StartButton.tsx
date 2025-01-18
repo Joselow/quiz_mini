@@ -1,11 +1,9 @@
+import { LIMIT_QUESTIONS } from "../assets/constants/questionInfo"
 import { useQuestions } from "../hooks/useQuestions"
-
-
-const LIMIT_QUESTIONS = 10
 
 export function StartButton () {
     const { getQuestions } = useQuestions()
-    const handleStart = (params) => {
+    const handleStart = () => {
         getQuestions(LIMIT_QUESTIONS)
     }
     return <>

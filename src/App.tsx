@@ -5,21 +5,15 @@ import { useQuestions } from './hooks/useQuestions';
 
 function App() {
   const { questions, resetGame, inGame, userSelectedAnswer } = useQuestions()
-
-  const handleRestart = () => {
-    resetGame()
-  }
-
   return (
     <>
      <main>
         <div style={{ position: 'relative' }}>
           <h1>Quiz</h1>
-
           { 
             inGame && userSelectedAnswer  && 
             <button className='restart'
-              onClick={handleRestart}
+              onClick={() => resetGame()}
               >Again
             </button>
           }       

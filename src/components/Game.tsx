@@ -1,12 +1,9 @@
 import { useQuestions } from "../hooks/useQuestions"
+import { FooterInfo } from "./FooterInfo"
 import { Question } from "./Question"
-
-
-
 
 export function Game () {
     const { questions, indexQuestion, goPreviousAnswer, goNextAnswer, currentQuestion } = useQuestions()
-
 
     return <>
         <div>
@@ -22,5 +19,6 @@ export function Game () {
         <Question
             info={currentQuestion}
         />
+        <FooterInfo/>
     </>
 }
